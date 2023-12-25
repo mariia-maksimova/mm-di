@@ -7,7 +7,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"mm.di", "mm.pets"})
 public class MmDiApplication {
 
 	public static void main(String[] args) {
