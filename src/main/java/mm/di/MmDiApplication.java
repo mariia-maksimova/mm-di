@@ -1,6 +1,7 @@
 package mm.di;
 
 import mm.di.controllers.*;
+import mm.di.datasource.FakeDataSource;
 import mm.di.services.PrototypeBean;
 import mm.di.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -55,7 +56,13 @@ public class MmDiApplication {
 		System.out.println(prototypeBean1.getMyScope());
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
-		
+
+
+		System.out.println("---------- Fake Data Source");
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getJdbcurl());
 	}
 
 }
