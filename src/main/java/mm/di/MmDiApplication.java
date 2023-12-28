@@ -1,5 +1,6 @@
 package mm.di;
 
+import mm.di.config.MmDiConfiguration;
 import mm.di.controllers.*;
 import mm.di.datasource.FakeDataSource;
 import mm.di.services.PrototypeBean;
@@ -63,6 +64,12 @@ public class MmDiApplication {
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+		System.out.println("----------MmDiConfiguration");
+		MmDiConfiguration mmDiConfiguration = ctx.getBean(MmDiConfiguration.class);
+		System.out.println(mmDiConfiguration.getUsername());
+		System.out.println(mmDiConfiguration.getPassword());
+		System.out.println(mmDiConfiguration.getJdbcurl());
 	}
 
 }
