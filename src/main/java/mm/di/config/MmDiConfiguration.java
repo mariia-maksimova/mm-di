@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties("mm")
+//@ConfigurationProperties("mm")
 public class MmDiConfiguration {
     private String username;
     private String password;

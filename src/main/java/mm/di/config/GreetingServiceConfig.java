@@ -7,14 +7,16 @@ import mm.di.services.*;
 import mm.pets.services.PetService;
 import mm.pets.services.PetServiceFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
 @Configuration
 @ImportResource("classpath:mm-di-config.xml")
+@EnableConfigurationProperties(MmDiConstructorConfiguration.class)
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDataSource fakeDataSource(MmDiConfiguration mmDiConfiguration) {
+    FakeDataSource fakeDataSource(MmDiConstructorConfiguration mmDiConfiguration) {
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUsername(mmDiConfiguration.getUsername());
         fakeDataSource.setPassword(mmDiConfiguration.getPassword());
